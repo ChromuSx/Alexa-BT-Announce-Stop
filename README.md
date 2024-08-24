@@ -33,7 +33,7 @@ The problem is caused by Alexa interpreting short interruptions in the Bluetooth
 3. **Configure the action:**
    - Go to the "Actions" tab and create a new one.
    - Select "Start a program" as the action.
-   - In the "Program/script" field, enter `powershell`.
+   - In the "Program/script" field, enter `"powershell.exe -WindowStyle Hidden"`.
    - In the "Add arguments" field, enter the following script:
 
      ```powershell
