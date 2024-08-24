@@ -24,10 +24,15 @@ The problem is caused by Alexa interpreting short interruptions in the Bluetooth
 2. **Create a new task:**
    - In the right panel, click on "Create Basic Task".
    - Give the task a name, e.g., "Keep Alexa Connection".
-   - Choose "When I log on" as the trigger.
-   - Select "Start a program" as the action.
+
+3. **Configure the schedule:**
+   - Go to the "Triggers" tab and create a new one.
+   - Choose "When I log on".
+   - Set it to repeat every 9 minutes (you can write it in the select box) and the duration to "Indefinitely".
 
 3. **Configure the action:**
+   - Go to the "Actions" tab and create a new one.
+   - Select "Start a program" as the action.
    - In the "Program/script" field, enter `powershell`.
    - In the "Add arguments" field, enter the following script:
 
@@ -35,14 +40,8 @@ The problem is caused by Alexa interpreting short interruptions in the Bluetooth
      -Command "$player = New-Object System.Media.SoundPlayer; $player.SoundLocation = 'C:\Windows\Media\Windows Background.wav'; $player.Load(); $player.Play(); Start-Sleep -Milliseconds 50; $player.Stop();"
      ```
 
-4. **Configure the schedule:**
-   - After creating the task, right-click on it and select "Properties".
-   - Go to the "Triggers" tab and edit the existing trigger or create a new one.
-   - Set it to repeat every 9 minutes and the duration to "Indefinitely".
-
-5. **Save and test:**
+5. **Save:**
    - Click "OK" to save the changes.
-   - Right-click on the task and select "Run" to test it.
 
 This script will play a brief, nearly imperceptible sound every 9 minutes, preventing Alexa from disconnecting.
 
