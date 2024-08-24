@@ -13,6 +13,12 @@ Alexa devices are known to make annoying announcements when connecting or discon
 
 The problem is caused by Alexa interpreting short interruptions in the Bluetooth connection as a new connection, leading to frequent and unnecessary announcements.
 
+## Solution
+
+The root cause of this issue is that Alexa devices enter a standby mode after approximately 10 minutes of inactivity. When they detect any sound or activity after this period, they interpret it as a new connection and make an announcement.
+To prevent this, we can create a script that runs every 9 minutes, emitting an imperceptible sound. This keeps the Alexa device "active" and prevents it from entering standby mode. As a result, Alexa doesn't perceive subsequent sounds as new connections, eliminating the need for announcements.
+The solutions provided below for Windows, Linux, and macOS all follow this principle: they set up a scheduled task that plays a very short, nearly inaudible sound every 9 minutes. This constant, minimal activity keeps the Bluetooth connection "alive" in Alexa's perception, effectively stopping the annoying announcements.
+
 ## Detailed Solutions
 
 ### Windows
