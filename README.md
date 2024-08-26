@@ -30,6 +30,7 @@ The solutions provided below for Windows, Linux, and macOS all follow this princ
 2. **Create a new task:**
    - In the right panel, click on "Create Basic Task".
    - Give the task a name, e.g., "Keep Alexa Connection".
+   - Select "Run whether user is logged on or not" 
 
 3. **Configure the schedule:**
    - Go to the "Triggers" tab and create a new one.
@@ -39,7 +40,7 @@ The solutions provided below for Windows, Linux, and macOS all follow this princ
 3. **Configure the action:**
    - Go to the "Actions" tab and create a new one.
    - Select "Start a program" as the action.
-   - In the "Program/script" field, enter `"powershell.exe -WindowStyle Hidden"`.
+   - In the "Program/script" field, enter `powershell.exe`.
    - In the "Add arguments" field, enter the following script:
 
      ```powershell
