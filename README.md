@@ -44,7 +44,7 @@ The solutions provided below for Windows, Linux, and macOS all follow this princ
    - In the "Add arguments" field, enter the following script:
 
      ```powershell
-     -Command "$player = New-Object System.Media.SoundPlayer; $player.SoundLocation = 'C:\Windows\Media\Windows Background.wav'; $player.Load(); $player.Play(); Start-Sleep -Milliseconds 50; $player.Stop();"
+     -NoProfile -NonInteractive -WindowStyle Hidden -Command "$player = New-Object System.Media.SoundPlayer; $player.SoundLocation = 'C:\Windows\Media\Windows Background.wav'; $player.Load(); $player.Play(); Start-Sleep -Seconds 1; $player.Stop();"
      ```
 
 5. **Save:**
