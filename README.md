@@ -1,4 +1,10 @@
-# Detailed Guide to Stop Alexa Bluetooth Announcements
+# 🔕 Detailed Guide to Stop Alexa Bluetooth Announcements
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+  <img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS">
+</p>
 
 <p align="center">
   <a href="https://github.com/sponsors/ChromuSx"><img src="https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white" alt="GitHub Sponsors"></a>
@@ -9,7 +15,7 @@
 
 This README provides detailed solutions to prevent Alexa devices from announcing Bluetooth connections for Windows, Linux, and macOS systems.
 
-## Detailed Problem Description
+## 🧩 Detailed Problem Description
 
 Alexa devices are known to make annoying announcements when connecting or disconnecting from Bluetooth devices, particularly when a computer enters or exits sleep mode. These announcements can be especially problematic in various situations:
 
@@ -20,15 +26,15 @@ Alexa devices are known to make annoying announcements when connecting or discon
 
 The problem is caused by Alexa interpreting short interruptions in the Bluetooth connection as a new connection, leading to frequent and unnecessary announcements.
 
-## Solution
+## ✅ Solution
 
 The root cause of this issue is that Alexa devices enter a standby mode after approximately 10 minutes of inactivity. When they detect any sound or activity after this period, they interpret it as a new connection and make an announcement.
 To prevent this, we can create a script that runs every 9 minutes, emitting an imperceptible sound. This keeps the Alexa device "active" and prevents it from entering standby mode. As a result, Alexa doesn't perceive subsequent sounds as new connections, eliminating the need for announcements.
 The solutions provided below for Windows, Linux, and macOS all follow this principle: they set up a scheduled task that plays a very short, nearly inaudible sound every 9 minutes. This constant, minimal activity keeps the Bluetooth connection "alive" in Alexa's perception, effectively stopping the annoying announcements.
 
-## Detailed Solutions
+## 🛠️ Detailed Solutions
 
-### Windows
+### 🪟 Windows
 
 1. **Open Task Scheduler:**
    - Press `Win + R`, type `taskschd.msc`, and press Enter.
@@ -59,7 +65,7 @@ The solutions provided below for Windows, Linux, and macOS all follow this princ
 
 This script will play a brief, nearly imperceptible sound every 9 minutes, preventing Alexa from disconnecting.
 
-### Linux
+### 🐧 Linux
 
 1. **Install sox:**
    Open a terminal and type:
@@ -87,7 +93,7 @@ This script will play a brief, nearly imperceptible sound every 9 minutes, preve
 
 This command will play an inaudible 20Hz tone for 1 second every 9 minutes.
 
-### macOS
+### 🍎 macOS
 
 1. **Create an Apple Script:**
    - Open "Automator" from the Launchpad or Applications folder.
@@ -137,13 +143,13 @@ This command will play an inaudible 20Hz tone for 1 second every 9 minutes.
 
 This will run the script every 9 minutes (540 seconds).
 
-## Troubleshooting
+## 🐛 Troubleshooting
 
 - **Windows:** If the task doesn't start, check the Windows Event logs for errors.
 - **Linux:** Use `grep CRON /var/log/syslog` to check if the cron job is running.
 - **macOS:** Check `console.app` for any errors related to your Launchd script.
 
-## Contributing
+## 🤝 Contributing
 
 If you have improvements or alternative solutions, feel free to contribute to this guide. You can do so in the following ways:
 
@@ -164,10 +170,16 @@ This project is completely free and open source. If you find it useful and would
 
 Every contribution, no matter how small, is greatly appreciated! ❤️
 
-## Additional Resources
+## 📚 Additional Resources
 
 - [Official Alexa Documentation](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/bluetooth.html)
 - [Alexa Community Forum](https://www.amazonforum.com/s/topic/0TO4P000000E60xWAC/echo-alexa)
 - [Windows Task Scheduler Documentation](https://docs.microsoft.com/en-us/windows/win32/taskschd/task-scheduler-start-page)
 - [Cron Guide for Linux](https://www.adminschoice.com/crontab-quick-reference)
 - [Launchd Guide for macOS](https://www.launchd.info/)
+
+---
+
+<div align="center">
+  <sub>Made with ❤️ by <a href="https://github.com/ChromuSx">Giovanni Guarino</a></sub>
+</div>
